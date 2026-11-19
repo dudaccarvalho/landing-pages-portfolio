@@ -1,0 +1,39 @@
+:root { --paper: #edf3ff; --ink: #17294a; --accent: #254b91; --surface: #f8faff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+a { color: inherit; text-underline-offset: .25em; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.wrap { width: min(72rem, calc(100% - 2.5rem)); margin-inline: auto; }
+.top, footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding-block: 1.2rem; border-bottom: 1px solid currentColor; }
+.top strong { font-size: 1.2rem; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(1.5rem, 5vw, 4rem); padding-block: clamp(2rem, 7vw, 5rem); }
+.category, .detail { font-weight: 700; font-size: .85rem; }
+.category { text-transform: uppercase; letter-spacing: .12em; }
+h1, h2, h3 { line-height: 1.08; margin: 0; }
+h1, h2 { font-family: Georgia, serif; font-weight: normal; }
+h1 { font-size: clamp(2.65rem, 7vw, 5.6rem); letter-spacing: -.055em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+.summary { max-width: 42ch; margin-block: 1.3rem; }
+.hero-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.button { display: inline-flex; gap: .75rem; padding: .75rem 1.1rem; background: var(--accent); color: white; text-decoration: none; font-weight: 650; }
+.button:hover { text-decoration: underline; }
+.items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.items article { background: var(--surface); padding: 1.3rem; }
+.items p:last-child { margin-bottom: 0; }
+.detail { color: var(--accent); margin-top: 0; }
+footer { margin-top: 4rem; border-top: 1px solid currentColor; border-bottom: 0; }
+
+
+.hero { grid-template-columns: 1fr 1fr; background: #dce8fc; margin-block: 1.75rem 3.5rem; padding: 0; gap: 0; }
+.hero-image { grid-column: 1; grid-row: 1; height: 100%; aspect-ratio: 4 / 5; }
+.hero-copy { grid-column: 2; grid-row: 1; padding: clamp(1.3rem, 5vw, 4rem); }
+.items article { border-bottom: 3px solid var(--accent); }
+.content h2 { color: var(--accent); }
+@media (max-width: 660px) {
+  .hero-copy { grid-column: 1; grid-row: 1; }
+  .hero-image { grid-row: 2; height: auto; aspect-ratio: 4 / 3; }
+}
+
+@media (max-width: 660px) {
+  .hero, .items { grid-template-columns: 1fr; }
+}
