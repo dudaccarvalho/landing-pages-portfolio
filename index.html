@@ -17,19 +17,19 @@
     h1, h2, h3 { font-family: Georgia, serif; font-weight: normal; line-height: 1.05; margin: 0; }
     h1 { max-width: 13ch; font-size: clamp(3rem, 9vw, 6.5rem); letter-spacing: -.055em; }
     h2 { font-size: 2rem; margin-bottom: 1.25rem; }
-    h3 { font-size: clamp(2.3rem, 5vw, 3.5rem); }
-    .projects { display: grid; gap: 1.5rem; }
-    article { display: grid; grid-template-columns: 1.2fr 1fr; background: #f0e6f3; border-radius: 1.25rem; overflow: hidden; }
-    .preview { width: 100%; height: 100%; min-height: 17rem; object-fit: cover; display: block; }
-    .details { align-self: center; padding: clamp(1.5rem, 5vw, 3.5rem); }
+    h3 { font-size: 2rem; }
+    .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    article { display: grid; grid-template-rows: auto 1fr; background: #f0e6f3; border-radius: 1.25rem; overflow: hidden; }
+    .preview { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+    .details { display: flex; flex-direction: column; align-items: flex-start; padding: 1.4rem; }
+    .details a { margin-top: auto; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .button { display: inline-block; padding: .65rem 1rem; border-radius: .5rem; background: #66377c; color: white; font-weight: 600; text-decoration: none; }
     .button:hover { background: #4c285e; }
     .button:focus-visible { outline-offset: 3px; }
     footer { margin-top: 3rem; border-top: 1px solid #e8deeb; }
-    @media (max-width: 650px) {
-      article { grid-template-columns: 1fr; }
-      .preview { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
-    }
+    @media (max-width: 850px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .projects { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -51,6 +51,46 @@
             <h3>Flora Studio</h3>
             <p>Landing page para uma marca fictícia de plantas para apartamento. Feita com HTML e CSS.</p>
             <a class="button" href="flora-studio/index.html">Ver a Flora Studio <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article>
+          <img class="preview" src="cafe-origem/images/capa.webp" alt="Xícara de espresso e pães em uma mesa iluminada" loading="lazy">
+          <div class="details">
+            <h3>Café Origem</h3>
+            <p>Espresso, coados e pães de fermentação natural para uma manhã sem pressa.</p>
+            <a class="button" href="cafe-origem/index.html">Ver a página <span class="sr-only">Café Origem</span><span aria-hidden="true"> ↗</span></a>
+          </div>
+        </article>
+        <article>
+          <img class="preview" src="studio-eixo/images/capa.webp" alt="Pessoa praticando pilates em um estúdio lilás" loading="lazy">
+          <div class="details">
+            <h3>Studio Eixo</h3>
+            <p>Pilates em pequenos grupos, com acompanhamento de perto e exercícios adaptados à sua prática.</p>
+            <a class="button" href="studio-eixo/index.html">Ver a página <span class="sr-only">Studio Eixo</span><span aria-hidden="true"> ↗</span></a>
+          </div>
+        </article>
+        <article>
+          <img class="preview" src="nexo-dados/images/capa.webp" alt="Notebook com gráficos de um painel de indicadores" loading="lazy">
+          <div class="details">
+            <h3>Nexo Dados</h3>
+            <p>Um painel demonstrativo para acompanhar receita, pedidos e ticket médio em um só lugar.</p>
+            <a class="button" href="nexo-dados/index.html">Ver a página <span class="sr-only">Nexo Dados</span><span aria-hidden="true"> ↗</span></a>
+          </div>
+        </article>
+        <article>
+          <img class="preview" src="refugio-do-cipo/images/capa.webp" alt="Cabana entre montanhas e neblina ao nascer do sol" loading="lazy">
+          <div class="details">
+            <h3>Refúgio do Cipó</h3>
+            <p>Uma cabana na Serra do Cipó para quem quer trocar o barulho da cidade por dias mais tranquilos.</p>
+            <a class="button" href="refugio-do-cipo/index.html">Ver a página <span class="sr-only">Refúgio do Cipó</span><span aria-hidden="true"> ↗</span></a>
+          </div>
+        </article>
+        <article>
+          <img class="preview" src="atelie-mare/images/capa.webp" alt="Mãos de uma ceramista trabalhando em um vaso azul" loading="lazy">
+          <div class="details">
+            <h3>Ateliê Maré</h3>
+            <p>Cerâmica em pequenas tiragens, com esmaltes em tons de azul e marcas sutis do trabalho manual.</p>
+            <a class="button" href="atelie-mare/index.html">Ver a página <span class="sr-only">Ateliê Maré</span><span aria-hidden="true"> ↗</span></a>
           </div>
         </article>
       </div>
